@@ -1,0 +1,45 @@
+version: '3.9'
+services:
+  redis:
+    image: redis:latest
+    command: redis-server --appendonly yes
+    restart: always
+    ports: 
+        - 6379:6379
+  ms-auth:
+    build:
+      context: .
+      dockerfile: ./ms-auth/Dockerfile
+    ports:
+      - 3000:3000
+    restart: always
+  ms-solana:
+    build:
+      context: .
+      dockerfile: ./ms-solana/Dockerfile
+    depends_on:
+      - redis
+    restart: always
+  ms-test:
+    build:
+      context: .
+      dockerfile: ./ms-test/Dockerfile
+    ports:
+      - 3001:3001
+    depends_on:
+      - redis
+    restart: always
+
+#  nginx:
+#    image: nginx
+#    volumes: 
+#        - ./nginx/certbot/conf:/etc/letsencrypt
+#        - ./nginx/certbot/www:/var/www/certbot
+#        - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+#    restart: unless-stopped
+#    ports: 
+#        - 80:80
+#        - 443:443
+#    depends_on: 
+#        - auth
+#        - anymicroservice

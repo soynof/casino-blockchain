@@ -1,0 +1,18 @@
+
+apt install pkg-config libssl-dev
+apt install openssl
+apt install cmake
+apt install build-essential
+apt install libudev-dev
+
+cargo install --git https://github.com/project-serum/anchor --tag v0.18.0 anchor-cli --locked
+
+cargo install --git https://github.com/project-serum/anchor --tag v0.23.0 anchor-cli --locked
+
+
+solana-keygen new
+anchor init proyecto
+cd proyecto
+anchor test
+(si no corre)
+npm install --legacy-peer-deps

@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "e7ce2a1b-eb44-40cd-bb0e-b42639f3b0c4",
+		"name": "Pigxury",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"eze\",\r\n    \"password\": \"chichito\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/user/signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"eze\",\r\n    \"password\": \"chichito\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/anyserviceprotected",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/anyserviceprotected",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"anyserviceprotected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/anyservice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/anyservice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"anyservice"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
